@@ -1,0 +1,647 @@
+$primary-color: #B9FF66;
+$secondary-color: #0D0D0D;
+$text-color: #666666;
+$background-color: #f9f9f9;
+$card-background: #ffffff;
+$card-hover-background: #f0f0f0;
+$primary-second: #a3ff6e;
+$secondary-second: #d0d0d0;
+$fs-14: 14px;
+$fs-15: 15px;
+$fs-16: 16px;
+$fs-18: 18px;
+$fs-20: 20px;
+$fs-26: 26px;
+$fs-36: 36px;
+$fs-40: 40px;
+$fs-60: 60px;
+$fs-32: 32px;
+@mixin flex($justify: center,
+  $align: center,
+  $direction: row,
+  $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+.btn {
+  padding: 10px 20px; 
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: $secondary-color;
+  color:$background-color;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+  &.btn-green {
+  background-color: $primary-color;
+}
+ &.btn-success {
+  background-color:$secondary-color;
+ }
+}
+.mt-32{
+  margin-top: 32px;
+}
+.mt-30{
+  display: flex;
+  justify-content: flex-end;
+}
+.services-header {
+  padding: 70px 0 80px;
+  @include flex(0, center,0,30px);
+}
+h2 {
+    display: inline-block;
+    background: $primary-color;
+    padding: 7px;
+    font-size: $fs-40;
+    border-radius: 8px;
+    font-weight: bold;
+    & p {
+    color: $text-color;
+    font-size: $fs-18;
+  }
+  h4 {
+    font-size: $fs-20;
+    line-height: 1.2;
+    color: $secondary-color;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  h1 {
+    font-size: $fs-60;
+    padding-top: 20px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $primary-color;
+  .navbar {
+    @include flex(space-between, center);
+    padding-top: 20px;
+    background-color: $card-background;
+  }
+  .logo img {
+    height: 60px; }
+  .menu {
+    @include flex(flex-end, center, row, 25px);
+  }
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .toggle-menu {
+    display: none;
+  }
+}
+.container,
+.main-container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.hero {
+  padding-top: 80px;
+  @include flex(space-between, center);
+  .hero-left {
+    font-size:30px;
+    width: 40%;
+  }
+  .hero-right {
+    width: 40%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.brands {
+  padding: 20px;
+  @include flex(space-between, center);
+  .brands img {
+    transition: opacity 0.3s, filter 0.3s;
+     opacity: 1;
+    filter: grayscale(0%);
+   }  
+  & :hover {
+    opacity: 1;
+    filter: grayscale(0%) drop-shadow(0 0 6px $secondary-color);
+  }
+}
+.services-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  .service-card {
+    border-radius: 25px;
+    @include flex (space-between);
+  }
+  .card-content {
+  font-size: $fs-32;
+  }
+.badge {
+  color: $secondary-color;
+  background-color: $primary-color;
+  border-radius: 6px;
+  padding: 7px;
+  &-light-bg {
+    background-color: $background-color;
+    border-radius: 10px;
+    width: 186px;
+    padding: 7px;
+  }
+}
+.card-link {
+    padding-top: 90px;
+    text-decoration: none;
+    color: $card-background;
+  }
+  .arrow-circle {
+    display: inline-block;
+    font-size: $fs-20;
+    margin-top: 30px;
+    height: 41px;
+    width: 41px;
+  }
+  .service-img {
+    width: 210px;
+    height: 166.05px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .link {
+    color:$card-hover-background;} 
+    .link-1{
+      color: $secondary-color;
+    }
+   .green-bg {
+        background: $primary-color;
+       box-shadow: 0 4px 0 $secondary-color;
+       padding: 30px;
+      }
+  .dark-bg {
+    background: $secondary-color;
+    color: $card-background;
+    box-shadow: 0 4px 0 $secondary-color;
+    padding: 50px;
+  }
+  .light-bg {
+    background: $card-background;
+    padding: 50px;
+    box-shadow: 0 4px 0 $secondary-color;
+  }
+}
+.cta-section {
+  border-radius: 40px;
+  @include flex (space-between, center);
+  padding: 40px;
+  gap: 60px;
+  background: $background-color;
+  margin-top: 123.5px;
+  .cta-left {
+    width: 50%;
+    padding: 60px;
+  }
+  .gap{
+    padding: 20px 0;
+  }
+  .cta-right {
+    width: 50%;
+    @include flex (center, center);
+    position: relative;
+  }
+  & img {
+    position: absolute;
+  }
+}
+.case-studies {
+  .case-studies-panel {
+    display: flex;
+    background: $secondary-color;
+    border-radius: 32px;
+  }
+  .case-study-item {
+    padding: 70px 60px 92px 60px;
+    @include flex (space-between, 0, column ,24px);
+    color:$background-color;
+   }
+  .case-link {
+    display: inline-flex;
+    @include flex (0, center);
+    gap: 10px;
+    color: $primary-color;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $background-color;
+  }
+}
+.process-section {
+  @include flex (flex-end, 0, column, 20px);
+  .process-card {
+    background: $primary-color;
+    border-radius: 20px;
+    padding: 41px 60px 41px 60px;
+    cursor: pointer;
+    box-shadow: 0 4px $secondary-color;
+   }
+  .process-header {
+    @include flex (flex-end);
+    gap: 30px;
+  }
+  .process-number {
+    font-size: 48px;
+    font-weight: bold;
+    @include flex (flex-start, 0, 0);
+    line-height: 1;
+  }
+  .process-text {
+    flex: 1;
+    font-size: $fs-20;
+    font-weight: 500;
+    color: $secondary-color;
+  }
+  .process-card-1{
+     @include flex (flex-end, 0, column, 20px);
+     background:$secondary-second;
+    border-radius: 20px;
+    padding: 41px 60px 41px 60px;
+    cursor: pointer;
+    box-shadow: 0 4px $secondary-color;
+ }  
+}
+.cards-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 20px;
+  .cards {
+    border: 2px solid;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 6px 1px;
+  }
+  .cards-material {
+    @include flex(space-between, 0, 0, 10px);
+    padding-bottom: 20px;
+  }
+  &-img {
+    display: flex;
+    width: 50%;
+  }
+  .card-author {
+    @include flex (0, 0, column);
+    padding-top: 40px;
+    font-size: $fs-20;
+  }
+  .card-description {
+    padding-top: 20px;
+  }
+}
+.testimonials {
+  margin-top: 40px;
+  padding: 100px 90px 60px 0;
+  background: $secondary-color;
+  color: $card-background;
+  border-radius: 20px;
+  overflow: hidden;
+  .slider {
+    @include flex(center, 0, row, 40px);
+    padding-left: 100px;
+  }
+  .card {
+    min-width: 420px;
+    padding: 30px;
+    border-radius: 30px;
+    border: 1.5px solid $primary-color;
+    background: transparent;
+    position: relative;
+    &.active {
+      opacity: 1;
+    }
+  }
+  .triangle {
+    position: absolute;
+    bottom: -11px;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    background: $secondary-color;
+    border-left: 1.5px solid $primary-color;
+    border-bottom: 1.5px solid $primary-color;
+    transform: rotate(-45deg);
+  }
+  .author {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .controls {
+    @include flex(center, center, row, 40px);
+    margin-top: 50px;
+    padding-left: 20px;
+  }
+  .arrow-1 {
+    padding-left: 10%;
+    cursor: pointer;
+    color: $card-background;
+  }
+  .arrow-2 {
+    width: 20px;
+  }
+  .stars {
+    span {
+      font-size: $fs-18;
+      color: $text-color;
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}
+.Positivus-form {
+  background: $card-hover-background;
+  border-radius: 40px;
+  @include flex(0, 0, 0, 0);
+  padding-bottom: 80px;
+  overflow: hidden;
+ .form-wrapper {
+    padding-left: 100px;
+    padding-top: 60px;
+    width: 553px;
+  }
+ .information {
+form {
+   input , textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1.6px solid $secondary-color;
+    border-radius: 8px;
+    font-size: 14px;
+      &:focus {
+    background-color: $primary-color;
+  }
+   }
+    label {
+    width: 50%;
+    margin-top: 25px;
+    display: block;
+    font-size: $fs-14;
+  }
+  .btn {width: 100%;}
+}
+ }
+ .form-img {
+    width: 50%;
+  }
+  .form-image {
+    padding-top: 60px;
+    width: 441px;
+    margin-left: 408px;
+    overflow: hidden;
+  }
+  .circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid $text-color;
+    display: inline-block;
+    position: relative;
+  }
+}
+.footer {
+  margin-top: 100px;
+  border-radius: 50px;
+  background: $secondary-color;
+  padding: 60px 70px 30px;
+  color: $card-background;
+  .footer-inner {
+    @include flex (space-between);
+  }
+  .footer-logo {
+    margin-right: 20px;
+    padding-bottom: 20px;
+  }
+   .contact-tag {
+    display: inline-block;
+    background: $primary-color;
+    color: $secondary-color;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }  
+  .footer-right {
+    padding: 58px 20px 58px 20px;
+  }
+  .footer-links {
+    @include flex (flex-start);
+    gap: 25px;
+      &:hover {
+     color: $secondary-color;
+    }
+  }
+  .footer-links a {
+    color: $card-background;
+    text-decoration: none;
+    font-size: $fs-14;
+  }
+  .subscribe-box input {
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: $background-color;
+    &:focus {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+  }
+  .info {
+    @include flex(space-around);
+  }
+  .informed {
+    padding-right: 30%;
+    gap: 15px;
+    font-size: $fs-18;
+    padding-top: 10px;
+    gap: 20px;
+  }
+  .footer-bottom a {
+    color: $background-color;
+    text-decoration: underline;
+  }
+}
+@media (max-width: 768px) {
+   header {
+    .navbar {
+      position: relative;
+    }
+    .logo img {
+      height: 40px;
+      padding-left: 20px;
+    }
+    .hamburger {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 20px;
+    }
+    .menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $card-background;
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+      gap: 15px;
+    }
+    .toggle-menu:checked ~ .menu {
+      display: flex;
+    }
+     .btn {
+      display: none;
+    }
+  }
+ .hero {
+    padding: 20px;
+    & img {
+      display: none;
+    }
+  }
+  .brands {
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    gap: 15px;
+  }
+  .services-header {
+    @include flex(0, 0, column, 15px);
+  }
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+     .service-img {
+    width: 150px;
+    height: 166.05px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  }
+  .cta-section {
+    border-radius: 40px;
+    background: $background-color;
+     & img {
+      display: none;
+    }
+  }
+  .case-studies {
+    background: $secondary-color;
+    border-radius: 32px;
+    .case-link {
+      display: inline-flex;
+      @include flex (0, center);
+      gap: 10px;
+      color: $primary-color;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $background-color;
+    }
+  }
+  .process-section {
+    @include flex (flex-end, 0, column, 20px);
+    .process-card {
+      background: $primary-color;
+      border-radius: 20px;
+      padding: 41px 60px 41px 60px;
+      cursor: pointer;
+      box-shadow: 0 4px $secondary-color;
+    }
+    .process-number {
+    font-weight: bold;
+      @include flex (flex-start, 0, 0);
+      line-height: 1;
+    }
+  }
+   .cards-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    .cards-material {
+      @include flex(0, flex-start, 0 ,20px);
+    }
+    &img {
+      width: 100%;
+      @include flex(center);
+    }
+    .card-author {
+      padding-top: 20px;
+      @include flex(0, 0, column);
+      width: 100%;
+    }
+    .name,
+    .founder {
+      @include flex(0, center);
+    }
+    .card-description {
+      @include flex(0, center);
+    }
+  }
+  .testimonials {
+    .slider {
+      @include flex(0, center, column, 40px);
+    }
+    .cta-left {
+      width: 100%;
+    }
+  }
+  .case-studies {
+    padding: 20px;
+    &-panel {
+      @include flex(0, 0, column);
+    }
+    &-header5 {
+      @include flex(0, 0, column ,30px);
+      margin: 0 30% 10px;
+    }
+  }
+  .Positivus-form {
+  border-radius: 40px;
+  padding: 30px 20px;
+  @include flex(center, center, column);
+  &img {
+    display: none; 
+  }
+  form {
+    width: 80%;
+  }
+}
+.footer {
+  width: 90%;
+  margin: 40px auto 20px; 
+  .footer-inner {
+    @include flex (0,0,column,10px)};
+    .footer-links {
+      @include flex(0,0 ,column ,25px );
+    }
+    &-logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .info,
+  .subscribe-box {
+    @include flex(0, 0, column,15px);
+  }
+}
+}
