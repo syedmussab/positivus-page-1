@@ -98,6 +98,7 @@ header {
     height: 60px; }
   .menu {
     @include flex(flex-end, center, row, 25px);
+     color: $secondary-color;
   }
   .hamburger {
     display: none;
